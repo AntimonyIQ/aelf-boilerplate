@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <!-- The root namespace -->
+        <RootNamespace>Ean.Contracts.NovelWritingContract</RootNamespace>
+        <!-- Mark this project as a contract -->
+        <IsContract>true</IsContract>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+        <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+        <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    </PropertyGroup>
+    <ItemGroup>
+        <!-- Reference the protobuf definition of the contract -->
+        <ContractCode Include="..\..\protobuf\novel_writing_contract.proto">
+            <Link>Protobuf\Proto\novel_writing_contract.proto</Link>
+        </ContractCode>
+    </ItemGroup>
+</Project>
